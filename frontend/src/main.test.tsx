@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest'; import {Chess} from 'chess.js'; describe('chess interaction model',()=>it('accepts a legal opening move',()=>{const game=new Chess();expect(game.move('e4').san).toBe('e4');}));

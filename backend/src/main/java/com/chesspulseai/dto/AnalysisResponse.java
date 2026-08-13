@@ -1,0 +1,1 @@
+package com.chesspulseai.dto; import com.chesspulseai.enumtype.GamePhase; public record AnalysisResponse(Integer evaluation,Integer mateScore,String bestMove,String principalVariation,int depth,ProbabilityResponse probabilities,GamePhase gamePhase,String coachingExplanation){}

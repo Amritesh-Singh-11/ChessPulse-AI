@@ -1,0 +1,1 @@
+package com.chesspulseai.dto; import com.chesspulseai.enumtype.PlayerColor; import jakarta.validation.constraints.*; public record CreateGameRequest(@NotBlank @Size(max=100) String whitePlayer,@NotBlank @Size(max=100) String blackPlayer,@NotNull PlayerColor playerColor){}

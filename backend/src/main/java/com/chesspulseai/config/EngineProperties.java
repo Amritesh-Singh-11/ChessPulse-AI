@@ -1,0 +1,1 @@
+package com.chesspulseai.config; import org.springframework.boot.context.properties.ConfigurationProperties; @ConfigurationProperties(prefix="chesspulse.engine") public record EngineProperties(boolean enabled,String path,int depth,int timeoutSeconds){}

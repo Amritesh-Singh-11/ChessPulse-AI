@@ -1,0 +1,43 @@
+spring:
+  config:
+    # Load local development variables from the repository root when running from backend/.
+    import: optional:file:../.env[.properties]
+  application:
+    name: chesspulse-ai
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/chesspulse?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${MYSQL_USER:chesspulse}
+    password: ${MYSQL_PASSWORD:chesspulse}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+chesspulse:
+  engine:
+    enabled: ${STOCKFISH_ENABLED:false}
+    path: ${STOCKFISH_PATH:}
+    depth: ${STOCKFISH_DEPTH:16}
+    timeout-seconds: ${STOCKFISH_TIMEOUT_SECONDS:20}
+
+  probability:
+    draw-display-threshold: ${DRAW_DISPLAY_THRESHOLD:0.5}
+
+  cors-origins: ${CORS_ORIGINS:http://localhost:5173}

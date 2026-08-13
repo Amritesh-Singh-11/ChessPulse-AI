@@ -1,0 +1,1 @@
+package com.chesspulseai.dto; import com.chesspulseai.enumtype.*; import java.time.Instant; import java.util.*; public record GameResponse(UUID publicId,String whitePlayer,String blackPlayer,PlayerColor playerColor,GameStatus status,GameResult result,Instant startTime,Instant endTime,Instant createdAt,int moveCount){}

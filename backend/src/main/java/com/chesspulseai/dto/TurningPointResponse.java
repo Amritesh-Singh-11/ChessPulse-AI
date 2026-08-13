@@ -1,0 +1,1 @@
+package com.chesspulseai.dto; import com.chesspulseai.enumtype.*; public record TurningPointResponse(int moveNumber,String san,PlayerColor player,GamePhase gamePhase,ProbabilityResponse before,ProbabilityResponse after,double probabilitySwing,String bestMove,String principalVariation,int depth,Integer mateScore,String coachingExplanation){}

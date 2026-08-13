@@ -1,0 +1,1 @@
+package com.chesspulseai.repository; import com.chesspulseai.entity.Game; import com.chesspulseai.enumtype.GameStatus; import java.util.*; import org.springframework.data.jpa.repository.JpaRepository; public interface GameRepository extends JpaRepository<Game,Long>{Optional<Game> findByPublicId(String publicId); List<Game> findAllByStatusOrderByCreatedAtDesc(GameStatus status);}
